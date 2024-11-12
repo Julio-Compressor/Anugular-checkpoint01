@@ -1,0 +1,42 @@
+<!-- video-detail.component.html -->
+<div class="video-detail">
+    @if (video$ | async; as video) {
+    <div class="video-container">
+        <h1 class="title">{{ video.title }}</h1>
+
+        <div class="metadata">
+            <div class="channel-info">
+                <span class="channel-name">{{ video.channelName }}</span>
+                <div class="stats">
+                    <span>{{ video.nbViews }}</span>
+                    <span class="date">{{ video.uploadDate }}</span>
+                </div>
+            </div>
+        </div>
+
+        <img [src]="video.imgSrc" [alt]="video.title" class="thumbnail">
+
+        <div class="details">
+            <div class="likes">{{ video.likes }} likes</div>
+
+            <div class="categories">
+                @for (category of video.categories; track category) {
+                <span class="category-tag">{{ category }}</span>
+                }
+            </div>
+        </div>
+
+        <div class="comments-section">
+            <h2>Commentaires ({{ video.comments.length }})</h2>
+            @for (comment of video.comments; track comment.author) {
+            <div class="comment">
+                <strong class="author">{{ comment.author }}</strong>
+                <p class="content">{{ comment.content }}</p>
+            </div>
+            }
+        </div>
+    </div>
+    } @else {
+    <div class="loading">Chargement...</div>
+    }
+</div>

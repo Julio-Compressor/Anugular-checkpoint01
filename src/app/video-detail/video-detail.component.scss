@@ -1,0 +1,113 @@
+// video-detail.component.scss
+.video-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .video-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        .title {
+            font-size: 24px;
+            padding: 20px;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .metadata {
+            padding: 0 20px 20px;
+
+            .channel-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .channel-name {
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+
+                .stats {
+                    color: #666;
+                    font-size: 14px;
+
+                    .date {
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+
+        .thumbnail {
+            width: 100%;
+            max-height: 600px;
+            object-fit: contain;
+            background: #f8f8f8;
+        }
+
+        .details {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+
+            .likes {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 12px;
+            }
+
+            .categories {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                .category-tag {
+                    background: #f0f0f0;
+                    padding: 6px 12px;
+                    border-radius: 16px;
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+        }
+
+        .comments-section {
+            padding: 20px;
+
+            h2 {
+                font-size: 18px;
+                margin: 0 0 20px;
+                font-weight: 500;
+            }
+
+            .comment {
+                padding: 16px;
+                border-bottom: 1px solid #eee;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .author {
+                    display: block;
+                    margin-bottom: 8px;
+                    color: #333;
+                }
+
+                .content {
+                    margin: 0;
+                    color: #666;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    .loading {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+    }
+}

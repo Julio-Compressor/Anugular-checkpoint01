@@ -1,0 +1,9 @@
+<div class="video-grid">
+    @if (videos$ | async; as videos) {
+    @for (video of videos; track video.url) {
+    <app-video-card [video]="video" />
+    }
+    } @else {
+    <p>Chargement des vidéos...</p>
+    }
+</div>

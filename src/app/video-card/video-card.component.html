@@ -1,0 +1,18 @@
+<div class="video-card">
+    <img [src]="video.imgSrc" [alt]="video.title" class="thumbnail">
+    <div class="content">
+        <h3 class="title">{{ video.title }}</h3>
+        <p class="channel">{{ video.channelName }}</p>
+        <div class="metadata">
+            <span>{{ video.nbViews }} · {{ video.uploadDate }}</span>
+        </div>
+        <div class="categories">
+            @for (category of video.categories; track category) {
+            <span class="category-badge">{{ category }}</span>
+            }
+        </div>
+        <button class="voir-plus" [routerLink]="['/video', video.id]">
+            Voir plus
+        </button>
+    </div>
+</div>
